@@ -450,14 +450,10 @@ Navbar
 /* add :not(.nav-logo) to img */
 
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   background: var(--clr-white);
   box-shadow: var(--dark-shadow);
   z-index: 2;
-  height: 4rem;
   display: flex;
   align-items: center;
 }
@@ -473,6 +469,7 @@ Navbar
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
 }
 .nav-toggle {
   background: transparent;
@@ -503,12 +500,14 @@ Navbar
 }
 /* nav toggle functionality */
 .nav-links {
-  height: 0;
-  overflow: hidden;
   transition: var(--transition);
+  position: absolute;
+  background-color: white;
+  width: inherit;
+  top: 90px;
 }
-.show-links {
-  height: 280px;
+.hide-links {
+  display: none;
 }
 /* nav at bigger screen size */
 @media screen and (min-width: 992px) {
@@ -520,6 +519,8 @@ Navbar
   .nav-links {
     height: auto;
     display: flex;
+    position: static;
+    width: fit-content;
   }
   .nav-center {
     display: flex;
@@ -527,9 +528,6 @@ Navbar
     align-items: center;
     /* optional */
     flex-wrap: wrap;
-  }
-  .nav-header {
-    padding: 0 0;
   }
   .nav-link {
     padding: 0 0;
